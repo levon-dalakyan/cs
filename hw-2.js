@@ -55,7 +55,15 @@ function execute(program) {
                 if (a === 0) {
                     i++;
                 } else {
-                    i = i + 3;
+                    if (
+                        program[i + 1] === 1 ||
+                        program[i + 1] === 3 ||
+                        program[i + 1] === 5
+                    ) {
+                        i = i + 3;
+                    } else {
+                        i = i + 2;
+                    }
                 }
                 break;
             case 3:
@@ -65,7 +73,7 @@ function execute(program) {
                 i++;
                 break;
             case 5:
-                i = 2;
+                i = program[i + 1];
                 break;
         }
     }
